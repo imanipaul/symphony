@@ -1,8 +1,19 @@
 import React from "react";
 import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import Home from "./views/Home";
 
 function App() {
-  return <div className="App">Symphony</div>;
+  return (
+    <div className="App">
+      Symphony
+      <Switch>
+        <Route path="/home">
+          <Home />
+        </Route>
+      </Switch>
+    </div>
+  );
 }
 
 export default App;
