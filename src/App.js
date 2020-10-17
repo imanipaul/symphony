@@ -7,8 +7,7 @@ import { Button } from "antd";
 function App() {
   return (
     <div className="App">
-      {/* Symphony */}
-      <Button type="primary">Test Button</Button>
+      Symphony
       <Switch>
         <Route path="/home">
           <Home />

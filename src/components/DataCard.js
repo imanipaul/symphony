@@ -12,19 +12,20 @@ export default function DataCard(props) {
     response && console.log("response is ", response.drinks[0]);
   }, [loading, response]);
 
-  let loadingTest = true;
-  const { Meta } = Card;
   return (
     <div>
       <Card hoverable style={{ width: 250 }} loading={loading}>
         <Skeleton loading={loading}>
           {response && (
             <>
-              <Image src={response && response.drinks[0].strDrinkThumb} />
-              <h3>{response && response.drinks[0].strDrink}</h3>
-              <Tag>{response && response.drinks[0].strAlcoholic}</Tag>
-              <Tag>{response && response.drinks[0].strGlass}</Tag>
-              <Tag>{response && response.drinks[0].strIBA}</Tag>
+              <Image src={response.drinks[0].strDrinkThumb} />
+
+              <h3>{response.drinks[0].strDrink}</h3>
+              <Tag>{response.drinks[0].strAlcoholic}</Tag>
+              <Tag>{response.drinks[0].strGlass}</Tag>
+              {response.drinks[0].strIBA && (
+                <Tag>{response.drinks[0].strIBA}</Tag>
+              )}
             </>
           )}
         </Skeleton>
