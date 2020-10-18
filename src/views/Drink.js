@@ -54,16 +54,20 @@ export default function Drink() {
           <section className="content">
             <Image src={response.strDrinkThumb} />
             <div className="instructions">
-              {ingredients &&
-                ingredients.map((element, index) => {
-                  return (
-                    <React.Fragment key={index}>
-                      <p>{element.measurement}</p> <p>{element.ingredient}</p>
-                    </React.Fragment>
-                  );
-                })}
+              <div className="all-ingredients">
+                {ingredients &&
+                  ingredients.map((element, index) => {
+                    return (
+                      <React.Fragment key={index}>
+                        <p className="ingredients">
+                          {element.measurement} {element.ingredient}
+                        </p>
+                      </React.Fragment>
+                    );
+                  })}
+              </div>
 
-              <p>{response.strInstructions}</p>
+              <p className="directions">{response.strInstructions}</p>
             </div>
           </section>
         </>
