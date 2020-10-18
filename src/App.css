@@ -11,3 +11,9 @@ body,
   text-align: center;
   /* height: 100vh; */
 }
+
+h1 {
+  text-align: right;
+  margin-right: 1em;
+  margin-top: 1%;
+}

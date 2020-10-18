@@ -1,4 +1,30 @@
 .drink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    font-size: 3em;
+    text-align: left;
+    border-bottom: 1px solid #c4c4c4;
+    width: 80%;
+  }
+
+  .tags {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    & * {
+      color: black;
+      background-color: #e1e1e1;
+      font-size: 1.2em;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+  }
+
   .ant-image {
     width: 380px;
     height: auto;

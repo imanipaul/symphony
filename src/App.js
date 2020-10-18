@@ -7,7 +7,7 @@ import Drink from "./views/Drink";
 function App() {
   return (
     <div className="App">
-      <h1>Symphony</h1>
+      <h1>symphony</h1>
       <Switch>
         <Route path="/home">
           <Home />

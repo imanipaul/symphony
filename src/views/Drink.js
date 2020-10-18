@@ -40,15 +40,16 @@ export default function Drink() {
 
   return (
     <div className="drink">
-      Drink Page
       {response && (
         <>
           <h3>{response.strDrink}</h3>
+          <section className="tags">
+            {response.strIBA && <Tag>{response.strIBA}</Tag>}
+            <Tag>{response.strAlcoholic}</Tag>
+            <Tag>{response.strGlass}</Tag>
+            <Tag>{response.strCategory}</Tag>
+          </section>
           <Image src={response.strDrinkThumb} />
-          <Tag>{response.strAlcoholic}</Tag>
-          <Tag>{response.strCategory}</Tag>
-          <Tag>{response.strGlass}</Tag>
-          {response.strIBA && <Tag>{response.strIBA}</Tag>}
           {ingredients &&
             ingredients.map((element, index) => {
               return (
