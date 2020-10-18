@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Card, Skeleton, Tag, Image } from "antd";
 import useFetch from "../hooks/useFetch";
 import "../styles/DataCard.scss";

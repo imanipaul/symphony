@@ -2,8 +2,9 @@ import { Tag, Image } from "antd";
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
+import "../styles/Drink.scss";
 
-export default function Drink(props) {
+export default function Drink() {
   let [ingredients, setIngredients] = useState([]);
   let { id } = useParams();
   let history = useHistory();
