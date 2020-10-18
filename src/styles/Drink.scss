@@ -26,10 +26,17 @@
   }
 
   .ant-image {
-    width: 380px;
     height: auto;
     .ant-image-img {
+      width: 380px;
       border-radius: 50%;
     }
+  }
+
+  .content {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 4em;
   }
 }

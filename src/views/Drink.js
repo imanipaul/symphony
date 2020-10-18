@@ -1,4 +1,4 @@
-import { Tag, Image } from "antd";
+import { Tag, Image, Rate } from "antd";
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
@@ -42,24 +42,30 @@ export default function Drink() {
     <div className="drink">
       {response && (
         <>
-          <h3>{response.strDrink}</h3>
+          <h3>
+            {response.strDrink} <Rate />
+          </h3>
           <section className="tags">
             {response.strIBA && <Tag>{response.strIBA}</Tag>}
             <Tag>{response.strAlcoholic}</Tag>
             <Tag>{response.strGlass}</Tag>
             <Tag>{response.strCategory}</Tag>
           </section>
-          <Image src={response.strDrinkThumb} />
-          {ingredients &&
-            ingredients.map((element, index) => {
-              return (
-                <React.Fragment key={index}>
-                  {" "}
-                  <p>{element.measurement}</p> <p>{element.ingredient}</p>
-                </React.Fragment>
-              );
-            })}
-          <p>{response.strInstructions}</p>
+          <section className="content">
+            <Image src={response.strDrinkThumb} />
+            <div className="instructions">
+              {ingredients &&
+                ingredients.map((element, index) => {
+                  return (
+                    <React.Fragment key={index}>
+                      <p>{element.measurement}</p> <p>{element.ingredient}</p>
+                    </React.Fragment>
+                  );
+                })}
+
+              <p>{response.strInstructions}</p>
+            </div>
+          </section>
         </>
       )}
       <br />
