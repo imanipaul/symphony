@@ -5,7 +5,7 @@ import "../styles/Home.scss";
 export default function Home() {
   return (
     <div className="home">
-      Popular Drinks
+      <h2>Popular Drinks</h2>
       <section className="drinks">
         <DataCard url="https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007" />
         <DataCard url="https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11000" />

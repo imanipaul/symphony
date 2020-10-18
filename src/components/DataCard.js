@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Skeleton, Tag, Image } from "antd";
 import useFetch from "../hooks/useFetch";
 import "../styles/DataCard.scss";
 
 export default function DataCard(props) {
   const { response, loading, error } = useFetch(props.url);
+  const [selectedDrink, setSelectedDrinks] = useState(null);
 
   useEffect(() => {
     loading && console.log("loading...");
@@ -18,6 +19,9 @@ export default function DataCard(props) {
       style={{ width: 250, height: 380 }}
       loading={loading}
       className="drink-card"
+      onClick={() =>
+        console.log("clicked drink is", response.drinks[0].idDrink)
+      }
     >
       <Skeleton loading={loading}>
         {response && (

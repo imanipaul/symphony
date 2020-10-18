@@ -6,7 +6,7 @@ import Home from "./views/Home";
 function App() {
   return (
     <div className="App">
-      Symphony
+      <h1>Symphony</h1>
       <Switch>
         <Route path="/home">
           <Home />
