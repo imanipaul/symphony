@@ -1,4 +1,4 @@
-import { Tag, Image, Rate } from "antd";
+import { Tag, Image, Rate, Button } from "antd";
 import React, { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
@@ -73,9 +73,9 @@ export default function Drink() {
         </>
       )}
       <br />
-      <button type="button" onClick={() => history.push("/home")}>
+      <Button type="button" onClick={() => history.push("/home")}>
         Go Home
-      </button>
+      </Button>
     </div>
   );
 }
