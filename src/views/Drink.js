@@ -23,11 +23,6 @@ export default function Drink(props) {
 
     while (!done) {
       if (data[`strIngredient${val}`]) {
-        console.log(`ingredient ${val} is`, data[`strIngredient${val}`]);
-        console.log(
-          `measurement ${val} is`,
-          data[`strMeasure${val}`] ? data[`strMeasure${val}`] : null
-        );
         hold.push({
           measurement: data[`strMeasure${val}`],
           ingredient: data[`strIngredient${val}`],
@@ -39,7 +34,6 @@ export default function Drink(props) {
       val++;
     }
 
-    console.log("hold is", hold);
     setIngredients(hold);
   };
 
@@ -63,6 +57,7 @@ export default function Drink(props) {
                 </React.Fragment>
               );
             })}
+          <p>{response.strInstructions}</p>
         </>
       )}
       <br />
