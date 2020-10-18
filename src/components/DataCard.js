@@ -6,35 +6,30 @@ import { Link } from "react-router-dom";
 
 export default function DataCard(props) {
   const { response, loading, error } = useFetch(props.url);
-  const [selectedDrink, setSelectedDrink] = useState(null);
 
   useEffect(() => {
     loading && console.log("loading...");
     error && console.log("Something went wrong...Error!");
-    response && console.log("response is ", response.drinks[0]);
-    selectedDrink && console.log("selected drinks is", selectedDrink);
+    response && console.log("response is ", response);
   }, [loading, response, error]);
 
   return (
-    <Link to={response ? `/drink/${response.drinks[0].idDrink}` : "/"}>
+    <Link to={response ? `/drink/${response.idDrink}` : "/"}>
       <Card
         hoverable
         style={{ width: 250, height: 380 }}
         loading={loading}
         className="drink-card"
-        onClick={() => setSelectedDrink(response.drinks[0].idDrink)}
       >
         <Skeleton loading={loading}>
           {response && (
             <>
-              <Image src={response.drinks[0].strDrinkThumb} />
+              <Image src={response.strDrinkThumb} />
 
-              <h3>{response.drinks[0].strDrink}</h3>
-              <Tag>{response.drinks[0].strAlcoholic}</Tag>
-              <Tag>{response.drinks[0].strGlass}</Tag>
-              {response.drinks[0].strIBA && (
-                <Tag>{response.drinks[0].strIBA}</Tag>
-              )}
+              <h3>{response.strDrink}</h3>
+              <Tag>{response.strAlcoholic}</Tag>
+              <Tag>{response.strGlass}</Tag>
+              {response.strIBA && <Tag>{response.strIBA}</Tag>}
             </>
           )}
         </Skeleton>

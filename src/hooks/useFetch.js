@@ -15,7 +15,7 @@ const useFetch = (url) => {
         const json = await res.json();
         console.log("json drinks is", json.drinks);
         if (!signal.aborted) {
-          setResponse(json);
+          setResponse(json.drinks[0]);
         }
       } catch (e) {
         if (!signal.aborted) {
