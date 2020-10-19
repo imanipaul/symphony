@@ -5,6 +5,7 @@ import Home from "./views/Home";
 import Drink from "./views/Drink";
 import { SearchOutlined } from "@ant-design/icons";
 import Modal from "antd/lib/modal/Modal";
+import { Input } from "antd";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -42,9 +43,7 @@ function App() {
         bodyStyle={{ height: 500 }}
         footer={null}
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <Input.Search enterButton={true} />
       </Modal>
     </div>
   );
