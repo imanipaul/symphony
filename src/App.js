@@ -39,9 +39,12 @@ function App() {
       </Switch>
       <Modal
         title="Basic Modal"
+        centered
         visible={showModal}
         onOk={handleOk}
         onCancel={handleCancel}
+        width={1000}
+        bodyStyle={{ height: 500 }}
       >
         <p>Some contents...</p>
         <p>Some contents...</p>
