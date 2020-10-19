@@ -1,5 +1,6 @@
 import { List, Avatar } from "antd";
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/SearchResults.scss";
 
 const SearchResults = (props) => {
@@ -13,8 +14,13 @@ const SearchResults = (props) => {
           <List.Item>
             <List.Item.Meta
               avatar={<Avatar src={`${item.strDrinkThumb}/preview`} />}
-              title={<a href="#">{item.strDrink}</a>}
+              title={
+                <Link onClick={props.closeModal} to={`/drink/${item.idDrink}`}>
+                  {item.strDrink}
+                </Link>
+              }
               description={item.strCategory}
+              //   onClick={props.closeModal()}
             />
           </List.Item>
         )}

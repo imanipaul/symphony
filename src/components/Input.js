@@ -3,7 +3,7 @@ import { Input } from "antd";
 import useFetchSearch from "../hooks/useFetchSearch";
 import SearchResults from "./SearchResults";
 
-const InputComponent = () => {
+const InputComponent = (props) => {
   const [searchVal, setSearchVal] = useState("");
 
   const { response, loading, error } = useFetchSearch(
@@ -24,7 +24,9 @@ const InputComponent = () => {
         onChange={(e) => setSearchVal(e.target.value)}
         allowClear={true}
       />
-      {response && <SearchResults data={response} />}
+      {response && (
+        <SearchResults data={response} closeModal={props.closeModal} />
+      )}
     </div>
   );
 };

@@ -44,7 +44,7 @@ function App() {
         bodyStyle={{ height: 500 }}
         footer={null}
       >
-        <InputComponent />
+        <InputComponent closeModal={handleClose} />
       </Modal>
     </div>
   );
