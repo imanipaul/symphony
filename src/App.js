@@ -13,12 +13,7 @@ function App() {
     console.log("show modal is", showModal);
   }, [showModal]);
 
-  const handleOk = (e) => {
-    console.log(e);
-    setShowModal(false);
-  };
-
-  const handleCancel = (e) => {
+  const handleClose = (e) => {
     console.log(e);
     setShowModal(false);
   };
@@ -38,13 +33,14 @@ function App() {
         </Route>
       </Switch>
       <Modal
-        title="Basic Modal"
+        title="Search"
         centered
         visible={showModal}
-        onOk={handleOk}
-        onCancel={handleCancel}
+        onOk={handleClose}
+        onCancel={handleClose}
         width={1000}
         bodyStyle={{ height: 500 }}
+        footer={null}
       >
         <p>Some contents...</p>
         <p>Some contents...</p>

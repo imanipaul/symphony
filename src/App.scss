@@ -40,6 +40,9 @@ header {
   }
 }
 
-.ant-modal-content {
-  // height: 500px;
+.ant-modal-header {
+  padding: 27px 24px;
+  .ant-modal-title {
+    font-size: 2em;
+  }
 }
