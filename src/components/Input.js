@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Input } from "antd";
-import useFetch from "../hooks/useFetch";
 import useFetchSearch from "../hooks/useFetchSearch";
+import SearchResults from "./SearchResults";
 
 const InputComponent = () => {
   const [searchVal, setSearchVal] = useState("");
@@ -24,6 +24,7 @@ const InputComponent = () => {
         onChange={(e) => setSearchVal(e.target.value)}
         allowClear={true}
       />
+      {response && <SearchResults data={response} />}
     </div>
   );
 };
