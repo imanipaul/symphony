@@ -1,13 +1,23 @@
-import React from "react";
-import "./App.css";
+import React, { useEffect, useState } from "react";
+import "./App.scss";
 import { Switch, Route } from "react-router-dom";
 import Home from "./views/Home";
 import Drink from "./views/Drink";
+import { SearchOutlined } from "@ant-design/icons";
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    console.log("show modal is", showModal);
+  }, [showModal]);
+
   return (
     <div className="App">
-      <h1>symphony</h1>
+      <header>
+        <h1>symphony</h1>
+        <SearchOutlined onClick={() => setShowModal(!showModal)} />
+      </header>
       <Switch>
         <Route path="/home">
           <Home />

@@ -1,0 +1,41 @@
+@import "~antd/dist/antd.css";
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+.App {
+  text-align: center;
+  /* height: 100vh; */
+}
+
+h1 {
+  text-align: right;
+  margin-right: 1em;
+  margin-top: 1%;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 4em;
+
+  span {
+    svg {
+      width: 2em;
+      height: 2em;
+      color: #e1e1e1;
+      transition: all 0.5s ease;
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
